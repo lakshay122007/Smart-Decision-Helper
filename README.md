@@ -131,7 +131,7 @@ smart-decision-helper/
 ## Milestone Status
 
 * [x] Milestone 1: Project Setup and Planning
-* [ ] Milestone 2: API Integration
+* [x] Milestone 2: API Integration
 * [ ] Milestone 3: Core Features
 * [ ] Milestone 4: Deployment
 
