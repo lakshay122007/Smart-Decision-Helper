@@ -46,3 +46,17 @@ main {
     margin-left: 55%;
     margin-bottom: 20px;
 }
+.card {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.results {
+display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.results .card {
+    width: 200px;
+}
