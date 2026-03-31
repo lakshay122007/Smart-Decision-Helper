@@ -28,11 +28,14 @@ function showData(items){
 let url = "https://dummyjson.com/products"
 function getData(){
     results.innerHTML = "Loading..."
-    fetch(url)
-    .then((res) => res.json())
-    .then((data) => {
+    setTimeout(()=>{
+        fetch(url)
+        .then((res) => res.json())
+        .then((data) => {
         showData(data.products)
     })
+    },1000)
+
 }
 
 getData()
