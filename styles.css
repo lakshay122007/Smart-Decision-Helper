@@ -59,3 +59,38 @@ display: flex;
 .results .card {
     width: 200px;
 }
+
+.results .card:hover {
+    border-color: #999;
+}
+
+@media (max-width: 768px) {
+    main {
+    padding: 15px;
+}
+
+.intro,
+.search,
+.best {
+    width: 100%;
+    margin-left: 0;
+}
+
+.search input {
+    width: 70%;
+}
+.domain {
+    margin-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.results {
+    justify-content: center;
+}
+.results .card {
+    flex: 1 1 200px;
+    max-width: 250px;
+}
+}
