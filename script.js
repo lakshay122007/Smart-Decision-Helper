@@ -24,3 +24,15 @@ function showData(items){
 
     })
 }
+
+let url = "https://dummyjson.com/products"
+function getData(){
+    results.innerHTML = "Loading..."
+    fetch(url)
+    .then((res) => res.json())
+    .then((data) => {
+        showData(data.products)
+    })
+}
+
+getData()
