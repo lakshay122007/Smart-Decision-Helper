@@ -2,7 +2,7 @@
 
 ## Overview
 
-Smart Decision Helper is a multi-domain web application designed to assist users in making better decisions by comparing different options across various categories such as gadgets, education, food, and entertainment.
+Smart Decision Helper is a multi-domain web application designed to assist users in making better decisions by comparing different options across various categories such as gadgets, education, food, and entertainment and more...
 
 Instead of simply displaying data, the application focuses on helping users **analyze, filter, and select the best option** based on their preferences.
 
@@ -27,6 +27,7 @@ The application is designed to support multiple domains:
 * 🎓 Education (Universities & Courses)
 * 🍽️ Food / Recipes
 * 🎮 Entertainment / Games
+* (more to be added)
 
 
 ---
