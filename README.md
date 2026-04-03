@@ -51,7 +51,7 @@ The application is designed to support multiple domains:
 
 ### 🎮 Games / Entertainment
 
-* https://api.rawg.io/api/games?key=28b45721b2244372a98083b1afe99f26&page_size=20
+* https://api.rawg.io/api/games?key=28b45721b2244372a98083b1afe99f26&page_size=50
 * Provides game data such as ratings, genres, and platforms
 
 

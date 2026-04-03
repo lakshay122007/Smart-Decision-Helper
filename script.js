@@ -3,7 +3,7 @@ let results = document.getElementById("results")
 let url1 = "https://dummyjson.com/products"
 let url2 = "http://universities.hipolabs.com/search?country=India"
 let url3 = "https://dummyjson.com/recipes"
-let url4 = "https://api.rawg.io/api/games?key=28b45721b2244372a98083b1afe99f26&page_size=20"
+let url4 = "https://api.rawg.io/api/games?key=28b45721b2244372a98083b1afe99f26&page_size=50"
 
 
 function showData(items){
@@ -84,37 +84,39 @@ function showUniversities(items){
     })
 }
 
+
 function getMeals(){
     results.innerHTML = "Loading..."
     setTimeout(()=>{
-        fetch(url3 + "chicken")
+        fetch(url3)
         .then((res)=> res.json())
         .then((data) =>{
-            showMeals(data.meals)
+            showMeals(data.recipes)
         })
-    .catch((err)=>results.innerHTML = "Couldn't Fetch Data")
+        .catch((err)=>{
+            results.innerHTML = "Couldn't Fetch Data"
+        })
     },500)
 }
 
 function showMeals(items){
     results.innerHTML = ""
-
     items.forEach(function(item){
         let div = document.createElement("div")
         div.className = "card"
 
         let title = document.createElement("h3")
-        title.innerText = item.strMeal
+        title.innerText = item.name
 
-        let category = document.createElement("p")
-        category.innerText = "Category: " + item.strCategory
+        let cuisine = document.createElement("p")
+        cuisine.innerText = "Cuisine: " + item.cuisine
 
-        let area = document.createElement("p")
-        area.innerText = "Cuisine: " + item.strArea
+        let rating = document.createElement("p")
+        rating.innerText = "Rating: " + item.rating
 
         div.appendChild(title)
-        div.appendChild(category)
-        div.appendChild(area)
+        div.appendChild(cuisine)
+        div.appendChild(rating)
 
         results.appendChild(div)
     })
@@ -126,7 +128,7 @@ function getGames(){
         fetch(url4)
         .then((res) => res.json())
         .then((data) => {
-            showGames(data.products)
+            showGames(data.results)
         })
         .catch((err)=>{
             results.innerHTML = "Couldn't Fetch Data"
@@ -139,6 +141,7 @@ function showGames(items){
     items.forEach(function(item){
         let div = document.createElement("div")
         div.className = "card"
+
         let title = document.createElement("h3")
         title.innerText = item.name
 
