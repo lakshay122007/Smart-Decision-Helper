@@ -2,8 +2,8 @@ let results = document.getElementById("results")
 
 let url1 = "https://dummyjson.com/products"
 let url2 = "http://universities.hipolabs.com/search?country=India"
-let url3 = "https://www.themealdb.com/api/json/v1/1/search.php?s="
-let url4 = "https://api.rawg.io/api/games?key=YOUR_API_KEY"
+let url3 = "https://dummyjson.com/recipes"
+let url4 = "https://api.rawg.io/api/games?key=28b45721b2244372a98083b1afe99f26&page_size=20"
 
 
 function showData(items){

@@ -46,12 +46,12 @@ The application is designed to support multiple domains:
 
 ### 🍽️ Food / Recipes
 
-* https://www.themealdb.com/api.php
+* https://dummyjson.com/recipes
 * Provides meal and recipe data with categories and ingredients
 
 ### 🎮 Games / Entertainment
 
-* https://api.rawg.io/docs/
+* https://api.rawg.io/api/games?key=28b45721b2244372a98083b1afe99f26&page_size=20
 * Provides game data such as ratings, genres, and platforms
 
 
