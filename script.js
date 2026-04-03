@@ -34,7 +34,7 @@ function getData(){
         .then((data) => {
         showData(data.products)
     })
-    },1000)
+    },500)
 
 }
 
