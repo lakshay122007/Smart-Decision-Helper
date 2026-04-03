@@ -1,7 +1,7 @@
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background: linear-gradient(120deg, #e8ecf1, #dfe6ed);
+    background: linear-gradient(120deg, #eae7e1, #dfe6ec);;
 }
 
 header{
@@ -10,16 +10,29 @@ header{
 header h2{
     /* font-family: Georgia, 'Times New Roman', Times, serif; */
     margin: 0;
-    color: #2c3e50;
+    color: #2b3a55;
     letter-spacing: 1px;
 }
 
 main{
-    background-color: #ffffff;
+    background: #ffffff;
+    box-shadow: 0 12px 35px rgba(0,0,0,0.08);
     max-width: 1100px;
     margin: 20px auto;
     padding: 30px 40px;
     position: relative;
+    border-radius: 8px;
+}
+main::before {
+    content: "";
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    background: #3a506b;
+    opacity: 0.08;
+    top: -50px;
+    right: -50px;
+    border-radius: 50%;
 }
 .intro{
     width: 55%;
@@ -27,12 +40,13 @@ main{
 }
 
 .intro h1{
+    font-size: 34px;
     margin-bottom: 5px;
     color: #1f2d3d;
 }
 
 .intro p{
-    color: #6c757d;
+    color: #6b7280;
 }
 
 .search{
@@ -41,45 +55,51 @@ main{
     margin-bottom: 20px;
 }
 .search input{
-    border-radius: 8px;
     padding: 10px;
     width: 65%;
-    border: 1px solid #ccd1d9;
-    background: #f8f9fa;
+    border: 1px solid #c9d1d9;
+    background: #f7f9fb;
+    border-radius: 4px;   
 }
 
 .search button{
     padding: 10px 14px;
-    border-radius: 8px;
-    background-color: #2c3e50;
+    border-radius: 4px;
+    background-color: #3a506b;
     color: white;
     cursor: pointer;
     border: none;
 }
 
+.search button:hover{
+    background-color: #2b3a55;
+}
 .domain{
     margin-bottom: 25px;
 }
 
 .domain button{
-    padding: 6px 12px;
-    border: 1px solid #ced4da;
-    background: #f1f3f5;
+    padding: 6px 14px;
+    border: 1px solid #d1d9e0;
+    background: #f1f4f7;
     cursor: pointer;
     margin-right: 8px;
-    border-radius: 7px;
+    border-radius: 20px;
+    transition: 0.2s;
 }
 
 .domain button:hover{
-    background: #dee2e6;
+    background: #3a506b;
+    color: white;
 }
 .best {
     width: 45%;
     margin-left: 50%;
     margin-bottom: 30px;
-    background: #e6f4ea;
+    background:linear-gradient(120deg, #d8f3dc, #cdeae0);
     border: 1px solid #b7e4c7;
-    padding: 12px;
+    padding: 14px;
+    border-radius: 6px;
 }
 
 
@@ -91,10 +111,11 @@ main{
 .card {
     flex: 1 1 200px;
     max-width: 240px;
-    background: #f8f9fa;
+    background: #ffffff;
     border: 1px solid #dee2e6;
-    padding: 12px;
+    padding: 14px;
     transition: 0.2s;
+    border-radius: 6px;
 }
 .card h3 {
     font-size: 15px;
@@ -109,7 +130,8 @@ main{
 
 .card:hover {
     transform: translateY(-4px);
-    border-color: #2c3e50;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    border-color: #3a506b;
 }
 
 .results .card:nth-child(3n) {
