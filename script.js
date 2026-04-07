@@ -233,8 +233,11 @@ input.addEventListener('input', ()=>{
 
 function sortData(type){
     let sorted = [...currentData]
-    if(type == 'price'){
+    if(type == 'priceLow'){
         sorted.sort((a,b)=>a.price - b.price)
+    }
+    else if(type == "priceHigh"){
+        sorted.sort((a,b) => b.price - a.price)
     }
     else if(type == "rating"){
         sorted.sort((a,b) => b.rating - a.rating)
