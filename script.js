@@ -232,30 +232,36 @@ input.addEventListener('input', ()=>{
 })
 
 function sortData(type){
-    let sorted = [...currentData]
-    if(type == 'priceLow'){
-        sorted.sort((a,b)=>a.price - b.price)
-    }
-    else if(type == "priceHigh"){
-        sorted.sort((a,b) => b.price - a.price)
-    }
-    else if(type == "rating"){
-        sorted.sort((a,b) => b.rating - a.rating)
-    }
 
+    let sorted = [...currentData]
     if(currentDomain == "Accessories"){
+        if(type == "priceLow"){
+            sorted.sort((a,b)=> a.price - b.price)
+        }
+        else if(type == "priceHigh"){
+            sorted.sort((a,b)=> b.price - a.price)
+        }
+        else if(type == "rating"){
+            sorted.sort((a,b)=> b.rating - a.rating)
+        }
         showData(sorted)
+    }
+    else if(currentDomain == "Food"){
+        if(type == "rating"){
+            sorted.sort((a,b)=> b.rating - a.rating)
+        }
+        showMeals(sorted)
+    }
+    else if(currentDomain == "Games"){
+        if(type == "rating"){
+            sorted.sort((a,b)=> b.rating - a.rating)
+        }
+        showGames(sorted)
     }
     else if(currentDomain == "Education"){
         showUniversities(sorted)
     }
-    else if(currentDomain == "Food"){
-        showMeals(sorted)
-    }
-    else if(currentDomain == "Games"){
-        showGames(sorted)
-    }
-}  
+}
 let sort = document.getElementById("sort")
 
 sort.addEventListener('change', ()=>{
