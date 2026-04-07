@@ -1,3 +1,6 @@
+let currentData = []
+let currentDomain = "Accessories"
+
 let results = document.getElementById("results")
 
 let url1 = "https://dummyjson.com/products"
@@ -7,6 +10,8 @@ let url4 = "https://api.rawg.io/api/games?key=28b45721b2244372a98083b1afe99f26&p
 
 
 function showData(items){
+
+    currentData = items
     results.innerHTML = ""
 
     items.forEach((item) => {
@@ -61,6 +66,7 @@ function getUniversities(){
 }
 
 function showUniversities(items){
+    currentData = items
     results.innerHTML = ""
 
     items.forEach(function(item){
@@ -100,6 +106,7 @@ function getMeals(){
 }
 
 function showMeals(items){
+    currentData = items
     results.innerHTML = ""
     items.forEach(function(item){
         let div = document.createElement("div")
@@ -136,6 +143,7 @@ function getGames(){
     },500)
 }
 function showGames(items){
+    currentData = items
     results.innerHTML = ""
 
     items.forEach(function(item){
@@ -164,6 +172,7 @@ let btns = document.querySelectorAll(".domain button")
 btns.forEach((btn) =>{
     btn.addEventListener('click', ()=>{
         let text = btn.innerText
+        currentDomain = text
 
         if(text == "Accessories"){
             getData()
@@ -178,4 +187,46 @@ btns.forEach((btn) =>{
             getGames()
         }
     })
+})
+
+function searchData(value){
+    let filtered = currentData.filter((item)=>{ //filter //search
+        if(currentDomain == "Accessories"){
+            return item.title.toLowerCase().includes(value.toLowerCase())
+        }
+        else if(currentDomain == "Education"){
+            return item.name.toLowerCase().includes(value.toLowerCase())
+        }
+        else if(currentDomain == "Food"){
+            return item.name.toLowerCase().includes(value.toLowerCase())
+        }
+        else if(currentDomain == "Games"){
+            return item.name.toLowerCase().includes(value.toLowerCase())
+        }
+    })
+    showSearch(filtered)
+}
+
+function showSearch(items){
+    results.innerHTML = ""
+    items.forEach((item)=>{
+        let div = document.createElement("div")
+        div.className = "card"
+        let title = document.createElement("h3")
+        if (currentDomain == "Accessories"){
+            title.innerText = item.title
+        }
+        else{
+            title.innerText = item.name
+        }
+        div.appendChild(title)
+        results.appendChild(div)
+
+    })
+}
+
+let input = document.querySelector(".search input")
+input.addEventListener('input', ()=>{
+    let value = input.value
+    searchData(value)
 })

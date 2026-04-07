@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family:'Merriweather';
     background: linear-gradient(120deg, #eae7e1, #dfe6ec);;
 }
 
@@ -8,7 +8,7 @@ header{
     padding: 20px 40px;
 }
 header h2{
-    /* font-family: Georgia, 'Times New Roman', Times, serif; */
+
     margin: 0;
     color: #2b3a55;
     letter-spacing: 1px;
