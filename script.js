@@ -230,3 +230,32 @@ input.addEventListener('input', ()=>{
     let value = input.value
     searchData(value)
 })
+
+function sortData(type){
+    let sorted = [...currentData]
+    if(type == 'price'){
+        sorted.sort((a,b)=>a.price - b.price)
+    }
+    else if(type == "rating"){
+        sorted.sort((a,b) => b.rating - a.rating)
+    }
+
+    if(currentDomain == "Accessories"){
+        showData(sorted)
+    }
+    else if(currentDomain == "Education"){
+        showUniversities(sorted)
+    }
+    else if(currentDomain == "Food"){
+        showMeals(sorted)
+    }
+    else if(currentDomain == "Games"){
+        showGames(sorted)
+    }
+}  
+let sort = document.getElementById("sort")
+
+sort.addEventListener('change', ()=>{
+    let value = sort.value
+    sortData(value)
+})

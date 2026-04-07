@@ -132,6 +132,7 @@ main::before {
     transform: translateY(-4px);
     box-shadow: 0 10px 25px rgba(0,0,0,0.08);
     border-color: #3a506b;
+    cursor: pointer;
 }
 
 .results .card:nth-child(3n) {
