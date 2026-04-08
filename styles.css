@@ -1,38 +1,50 @@
 body {
     margin: 0;
-    font-family:'Merriweather';
-    background: linear-gradient(120deg, #eae7e1, #dfe6ec);;
+    font-family: 'Merriweather';
+    background: 
+        linear-gradient(rgba(15, 23, 42, 0.137), rgba(15, 23, 42, 0.582)), url("Pastel geometric tech background.png");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #e2e8f0;
 }
 
 header{
     padding: 20px 40px;
 }
 header h2{
-
     margin: 0;
-    color: #2b3a55;
+    color: #1e293b;
     letter-spacing: 1px;
 }
 
 main{
-    background: #ffffff;
-    box-shadow: 0 12px 35px rgba(0,0,0,0.08);
+    background: #111827;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
     max-width: 1100px;
-    margin: 20px auto;
+    margin: 30px auto;
     padding: 30px 40px;
     position: relative;
-    border-radius: 8px;
+    border-radius: 10px;
 }
 main::before {
     content: "";
     position: absolute;
-    width: 220px;
-    height: 220px;
-    background: #3a506b;
-    opacity: 0.08;
-    top: -50px;
-    right: -50px;
+    width: 250px;
+    height: 250px;
+    background: #6366f1;
+    opacity: 0.1;
+    top: -60px;
+    right: -60px;
     border-radius: 50%;
+}
+main::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(#ffffff05 1px, transparent 1px),linear-gradient(90deg, #ffffff05 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
 }
 .intro{
     width: 55%;
@@ -42,11 +54,11 @@ main::before {
 .intro h1{
     font-size: 34px;
     margin-bottom: 5px;
-    color: #1f2d3d;
+    color: #f1f5f9;
 }
 
 .intro p{
-    color: #6b7280;
+    color: #94a3b8;
 }
 
 .search{
@@ -59,33 +71,35 @@ main::before {
 
 }
 .search input{
+    color: #e2e8f0;
     padding: 10px;
     width: 60%;
-    border: 1px solid #c9d1d9;
-    background: #f7f9fb;
+    border: 2px solid #334155;
+    background: #1e293b;
     border-radius: 4px;   
 }
 
 .search button{
     padding: 10px 14px;
     border-radius: 4px;
-    background-color: #3a506b;
+    background: #6366f1;
     color: white;
     cursor: pointer;
     border: none;
 }
 
 .search button:hover{
-    background-color: #2b3a55;
+    background: #4f46e5;
 }
 .domain{
     margin-bottom: 25px;
 }
 
 .domain button{
+    color: #cbd5f5;
     padding: 6px 14px;
-    border: 1px solid #d1d9e0;
-    background: #f1f4f7;
+    border: 2px solid #334155;
+    background: #1e293b;
     cursor: pointer;
     margin-right: 8px;
     border-radius: 20px;
@@ -93,15 +107,15 @@ main::before {
 }
 
 .domain button:hover{
-    background: #3a506b;
+    background: #6366f1;
     color: white;
 }
 .best {
     width: 45%;
     margin-left: 50%;
     margin-bottom: 30px;
-    background:linear-gradient(120deg, #d8f3dc, #cdeae0);
-    border: 1px solid #b7e4c7;
+    background:linear-gradient(120deg, #a0c6a553, #cdeae0d9);
+    border: 2px solid #9ff1aa53;
     padding: 14px;
     border-radius: 6px;
 }
@@ -115,27 +129,50 @@ main::before {
 .card {
     flex: 1 1 200px;
     max-width: 240px;
-    background: #ffffff;
-    border: 1px solid #dee2e6;
+    background: linear-gradient(135deg, #1e293b, #0f172a);;
+    border: 1px solid #334155;
     padding: 14px;
     transition: 0.2s;
-    border-radius: 6px;
+    border-radius: 8px;
+    position: relative;
+    color: #e2e8f0;
+}
+
+.card::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 8px;
+    background: linear-gradient(120deg, transparent, rgba(44, 91, 186, 0.03));
+}
+.card::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 10%;
+    height: 80%;
+    width: 3px;
+    background: #6366f1;
+    border-radius: 2px;
+    opacity: 0.6;
 }
 .card h3 {
+    color: #f1f5f9;
     font-size: 15px;
     margin-bottom: 8px;
+    font-weight: 600;
 }
 
 .card p {
     font-size: 13px;
     margin: 4px 0;
-    color: #555;
+    color: #94a3b8;
 }
 
 .card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-    border-color: #3a506b;
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: 0px 10px 30px rgba(99,102,241,0.25);
+    border-color: #6366f1;
     cursor: pointer;
 }
 
@@ -172,13 +209,17 @@ main {
 #sort{
     font-family: 'Merriweather';
     padding: 10px 14px;
-    border: 1px solid #c9d1d9;
-    background: #f7f9fb;
+    border: 2px solid #334155;
+    background: #1e293b;
     border-radius: 20px;
     width: 100px;
     cursor: pointer;
-
+    color: #e2e8f0;
 }
+#sort:hover{
+    border-color: #6366f1;
+}
+
 
 
 
