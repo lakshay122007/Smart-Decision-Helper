@@ -33,6 +33,7 @@ function showData(items){
         results.appendChild(div)
 
     })
+    updateBestChoice(items)
 }
 function getData(){
     results.innerHTML = "Loading..."
@@ -88,6 +89,7 @@ function showUniversities(items){
 
     results.appendChild(div)
     })
+    updateBestChoice(items)
 }
 
 
@@ -127,6 +129,7 @@ function showMeals(items){
 
         results.appendChild(div)
     })
+    updateBestChoice(items)
 }
 
 function getGames(){
@@ -165,6 +168,7 @@ function showGames(items){
 
         results.appendChild(div)
     })
+    updateBestChoice(items)
 }
 
 let btns = document.querySelectorAll(".domain button")
@@ -223,6 +227,7 @@ function showSearch(items){
         results.appendChild(div)
 
     })
+    updateBestChoice(items)
 }
 
 let input = document.querySelector(".search input")
@@ -261,6 +266,7 @@ function sortData(type){
     else if(currentDomain == "Education"){
         showUniversities(sorted)
     }
+    updateBestChoice(sorted)
 }
 let sort = document.getElementById("sort")
 
@@ -268,3 +274,48 @@ sort.addEventListener('change', ()=>{
     let value = sort.value
     sortData(value)
 })
+
+
+let bestBox = document.querySelector(".best .card")
+
+function updateBestChoice(items){
+    if(items.length == 0){
+        bestBox.innerHTML = "<p>No Data</p>"
+    }
+    let best = items[0]
+    if(currentDomain != "Education"){
+        best = items.reduce((a,b) => {
+            return (b.rating > a.rating) ? b : a
+        })
+    }
+    bestBox.innerHTML = ""
+
+    let title = document.createElement("h3")
+    let p1 = document.createElement("p")
+    let p2 = document.createElement("p")
+
+    if (currentDomain == "Accessories"){
+        title.innerText = best.title
+        p1.innerText = `Pricing: ₹${best.price}`
+        p2.innerText = `Rating: ${best.rating}`
+    }
+    else if(currentDomain == "Food"){
+        title.innerText = best.name
+        p1.innerText = `Cuisine: ${best.cuisine}`
+        p2.innerText = `Rating: ${best.rating}`
+    }
+    else if(currentDomain == "Games"){
+        title.innerText = best.name
+        p1.innerText = `Rating: ${best.rating}`
+        p2.innerText = `Released: ${best.released}`
+    }
+    else{
+        title.innerText = best.name
+        p1.innerText = `Country: ${best.country}`
+        p2.innerText = best.web_pages[0]
+    }
+
+    bestBox.appendChild(title)
+    bestBox.appendChild(p1)
+    bestBox.appendChild(p2)
+}

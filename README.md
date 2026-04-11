@@ -23,7 +23,7 @@ The goal of this project is to demonstrate the use of:
 
 The application is designed to support multiple domains:
 
-* 📱 Gadgets / Products
+* 💡 Accessories
 * 🎓 Education (Universities & Courses)
 * 🍽️ Food / Recipes
 * 🎮 Entertainment / Games
@@ -99,15 +99,6 @@ smart-decision-helper/
 │── script.js
 │── README.md
 ```
-
----
-
-## Future Enhancements
-
-* ❤️ Favorites / Bookmark system using Local Storage
-* 📄 Pagination or Infinite Scroll
-* ⚡ Debouncing for search optimization
-* 📊 Advanced recommendation logic
 
 ---
 
