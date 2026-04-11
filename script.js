@@ -1,6 +1,16 @@
 let currentData = []
 let currentDomain = "Accessories"
 
+let ctxDomain = document.getElementById("ctxDomain")
+let ctxCount = document.getElementById("ctxCount")
+let ctxSort = document.getElementById("ctxSort")
+
+function updateContext(items){
+    ctxDomain.innerText = `Domain: ${currentDomain}`
+    ctxCount.innerText = `Items: ${items.length}`
+    ctxSort.innerText = `Sort: ${(document.getElementById("sort").value)}`
+}
+
 let results = document.getElementById("results")
 
 let url1 = "https://dummyjson.com/products"
@@ -26,14 +36,19 @@ function showData(items){
         let rating = document.createElement("p")
         rating.innerText = `Rating: ${item.rating}`
 
+        let img = document.createElement("img")
+        img.src = item.thumbnail
+        div.appendChild(img)
         div.appendChild(title)
         div.appendChild(price)
         div.appendChild(rating)
+
 
         results.appendChild(div)
 
     })
     updateBestChoice(items)
+    updateContext(items)
 }
 function getData(){
     results.innerHTML = "Loading..."
@@ -80,8 +95,10 @@ function showUniversities(items){
     let country = document.createElement("p")
     country.innerText = "Country: " + item.country
 
-    let link = document.createElement("p")
-    link.innerText = item.web_pages[0]
+    let link = document.createElement("a")
+    link.href = item.web_pages[0]
+    link.innerText = "Visit Website"
+    link.target = "_blank"
 
     div.appendChild(title)
     div.appendChild(country)
@@ -90,6 +107,7 @@ function showUniversities(items){
     results.appendChild(div)
     })
     updateBestChoice(items)
+    updateContext(items)
 }
 
 
@@ -123,13 +141,18 @@ function showMeals(items){
         let rating = document.createElement("p")
         rating.innerText = "Rating: " + item.rating
 
+        let img = document.createElement("img")
+        img.src = item.image
+        div.appendChild(img)  
         div.appendChild(title)
         div.appendChild(cuisine)
         div.appendChild(rating)
 
+
         results.appendChild(div)
     })
     updateBestChoice(items)
+    updateContext(items)
 }
 
 function getGames(){
@@ -162,13 +185,18 @@ function showGames(items){
         let released = document.createElement("p")
         released.innerText = "Released: " + item.released
 
+        let img = document.createElement("img")
+        img.src = item.background_image
+        div.appendChild(img)
         div.appendChild(title)
         div.appendChild(rating)
         div.appendChild(released)
 
+
         results.appendChild(div)
     })
     updateBestChoice(items)
+    updateContext(items)
 }
 
 let btns = document.querySelectorAll(".domain button")
