@@ -58,7 +58,7 @@ function getData(){
         .then((data) => {
         showData(data.products)
     })
-    .catch((err)=>results.innerHTML = "Couldn't Fetch Data")
+    .catch(( )=>results.innerHTML = "Couldn't Fetch Data")
     },500)
 
 }
