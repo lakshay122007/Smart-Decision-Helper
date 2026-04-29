@@ -16,7 +16,7 @@ let results = document.getElementById("results")
 let url1 = "https://dummyjson.com/products"
 let url2 = "http://universities.hipolabs.com/search?country=India"
 let url3 = "https://dummyjson.com/recipes"
-let url4 = "https://api.rawg.io/api/games?key=28b45721b2244372a98083b1afe99f26&page_size=50"
+let url4 = "https://api.rawg.io/api/games?key=28b45721b2244372a98083b1afe99f26&page_size=40"
 
 
 function showData(items){
@@ -157,7 +157,7 @@ function showMeals(items){
 
 function getGames(){
     results.innerHTML = "Loading..."
-    setTimeout(()=>{
+
         fetch(url4)
         .then((res) => res.json())
         .then((data) => {
@@ -166,7 +166,6 @@ function getGames(){
         .catch((err)=>{
             results.innerHTML = "Couldn't Fetch Data"
         })
-    },500)
 }
 function showGames(items){
     currentData = items
